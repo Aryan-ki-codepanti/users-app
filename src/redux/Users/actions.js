@@ -29,3 +29,9 @@ export const fetchAsyncUsers = () => async dispatch => {
         dispatch(setError(error));
     }
 };
+export const fetchAsyncCurrentUser = id => async dispatch => {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/`);
+    const data = await res.json();
+    const user = data.find(user => user.id === id);
+    dispatch(setCurrentUser(user));
+};

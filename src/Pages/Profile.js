@@ -1,32 +1,44 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux';
-import { fetchAsyncUsers } from '../redux'
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { useNavigate, useParams } from "react-router";
+import {
+    fetchAsyncUsers,
+    setCurrentUser,
+    fetchAsyncCurrentUser
+} from "../redux";
 
-const Profile = ({ status , fetchUsers }) => {
+const Profile = ({
+    status: { user, users, loading, error },
+    fetchUsers,
+    setCurrentUser,
+    fetchUser
+}) => {
+    const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetchUsers();
-    } , []);
+        users.length === 0 
+        ? fetchUser(Number(id))
+        : setCurrentUser(users.find(user => user.id === Number(id)));
+    }, [id , fetchUser , users , setCurrentUser]);
 
     return (
         <div>
-            <h1>Profile</h1>
-            <h2> Status : { status.loading ? "Loading" : "Not Loading" } </h2>
-            {status.users.map(user => (
-                <div key={user.id}>
-                    <p> { user.username } </p>
-                </div>
-            ))}
+            <h1>Profile {id} </h1>
+            <p> {user ? user.username : "nope"} </p>
+            <button onClick={() => navigate("/")}> Go Back </button>
         </div>
-    )
-}
+    );
+};
 
 const mapStateToProps = state => ({
-    status: state.users   
+    status: state.users
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchUsers : () => dispatch(fetchAsyncUsers())
+    fetchUsers: () => dispatch(fetchAsyncUsers()),
+    setCurrentUser: user => dispatch(setCurrentUser(user)),
+    fetchUser: id => dispatch(fetchAsyncCurrentUser(id))
 });
 
-export default connect(mapStateToProps , mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
