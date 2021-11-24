@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { ProfileCard } from '../Components/ProfileCard/ProfileCard';
 import { fetchAsyncUsers } from '../redux'
 
 const Home = ({ status , fetchUsers }) => {
 
     useEffect(() => {
-        fetchUsers();
-    } , [ fetchUsers ]);
+        status.users.length === 0 && fetchUsers();
+    } , [ fetchUsers , status.users.length ]);
 
     return (
         <div>
@@ -15,8 +15,8 @@ const Home = ({ status , fetchUsers }) => {
             
             <h2> Status : { status.loading ? "Loading" : "Not Loading" } </h2>
             {status.users.map(user => (
-                <div key={user.id}>
-                    <Link to={`/profile/${user.id}`}> { user.username } </Link>
+                <div className="profile" key={user.id}>
+                    <ProfileCard user={user} />
                 </div>
             ))}
         </div>
