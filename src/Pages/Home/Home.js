@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
-import { ProfileCard } from '../Components/ProfileCard/ProfileCard';
-import { fetchAsyncUsers } from '../redux'
+import { ProfileCard } from '../../Components/ProfileCard/ProfileCard';
+import { fetchAsyncUsers } from '../../redux'
 
 const Home = ({ status , fetchUsers }) => {
 

@@ -5,7 +5,7 @@ import {
     fetchAsyncUsers,
     setCurrentUser,
     fetchAsyncCurrentUser
-} from "../redux";
+} from "../../redux";
 
 const Profile = ({
     status: { user, users, loading, error },

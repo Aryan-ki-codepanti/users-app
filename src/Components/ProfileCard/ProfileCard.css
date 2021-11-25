@@ -1,3 +1,7 @@
+.wrapper{
+    background: #fff;
+    padding: 3em;
+}
 
 /* Card Top */
 
@@ -8,8 +12,44 @@
 }
 
 .profile-picture{
-    width: 70px;
+    width: 120px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #000;
+}
+
+.profile-button:hover{
+    background: rgb(141, 137, 137);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.profile-button{
+    border-radius: 30px;
+    padding: 0.7em 1.4em;
+    border: 2px solid #EAEAEA;
+    background: transparent;
+    font-size: 1.075rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(88, 85, 85);
+}
+
+/* Mid */
+.name{
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-block: 0.9em 0.25em;
+}
+
+.username{
+    font-size: 1.1rem;
+    color: #7a7575;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+/* Footer */
+.tagline{
+    font-size: 0.9rem;
 }
