@@ -1,0 +1,15 @@
+
+/* Card Top */
+
+.card-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-picture{
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
