@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.heading {
+    font-size: 4rem;
+    text-align: center;
+    margin-block: 1em;
+    font-family: 'Arvo' !important;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    max-width: 1440px;
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2em;
+}
