@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { Loading } from "../../Components/Loading/Loading";
 import { ProfileCard } from "../../Components/ProfileCard/ProfileCard";
 import { fetchAsyncUsers } from "../../redux";
 import "./Home.css";
@@ -12,8 +13,7 @@ const Home = ({ status, fetchUsers }) => {
     return (
         <div className="container">
             <h1 className="heading"> Top Users </h1>
-            <h2> Status : {status.loading ? "Loading" : "Not Loading"} </h2>
-            
+            {status.loading &&  <Loading />}
             <div className="profile-container">
                 {status.users.map(user => (
                     <div className="profile" key={user.id}>
