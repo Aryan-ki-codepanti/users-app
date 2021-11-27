@@ -6,6 +6,7 @@ import {
     setCurrentUser,
     fetchAsyncCurrentUser
 } from "../../redux";
+import "./Profile.css";
 
 const Profile = ({
     status: { user, users, loading, error },
@@ -15,7 +16,6 @@ const Profile = ({
 }) => {
     const { id } = useParams();
     const navigate = useNavigate();
-
     useEffect(() => {
         users.length === 0 
         ? fetchUser(Number(id))
@@ -23,10 +23,12 @@ const Profile = ({
     }, [id , fetchUser , users , setCurrentUser]);
 
     return (
-        <div>
-            <h1>Profile {id} </h1>
-            <p> {user ? user.username : "nope"} </p>
-            <button onClick={() => navigate("/")}> Go Back </button>
+        <div className="profile-page-wrapper">
+            <div class="container">
+                <h1>Profile {id} </h1>
+                <p> {user ? user.username : "nope"} </p>
+                <button onClick={() => navigate("/")}> Go Back </button>
+            </div>
         </div>
     );
 };

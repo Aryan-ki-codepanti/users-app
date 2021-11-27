@@ -1,0 +1,14 @@
+
+.profile-page-wrapper{
+    --Blue-accent: #2096F3;
+    min-height: 100vh;
+    background-color: var(--Blue-accent);
+    display: flex;
+    align-items: center;
+}
+
+.profile-page-wrapper .container{
+    background: #fff;
+    border-radius: 10px;
+    padding: 2em;
+}
