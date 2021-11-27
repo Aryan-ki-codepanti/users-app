@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate, useParams } from "react-router";
+import { AddressCard } from "../../Components/AddressCard/AddressCard";
 import {
     fetchAsyncUsers,
     setCurrentUser,
@@ -28,6 +29,9 @@ const Profile = ({
                 <h1>Profile {id} </h1>
                 <p> {user ? user.username : "nope"} </p>
                 <button onClick={() => navigate("/")}> Go Back </button>
+                <div className="address">
+                    {user && <AddressCard user={ user } />}
+                </div>
             </div>
         </div>
     );
