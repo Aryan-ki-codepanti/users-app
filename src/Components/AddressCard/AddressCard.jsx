@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import "./AddressCard.css";
 
 export const AddressCard = ({ user }) => {
@@ -9,12 +9,12 @@ export const AddressCard = ({ user }) => {
                 <div></div>
             </div>
             <div className="address-content">
-                <h2 className="city"> { user.address.city } </h2>
+                <h2 className="city"> {user.address.city} </h2>
                 <p className="street-suite">
-                    { user.address.street } , { user.address.suite }
+                    {user.address.street} , {user.address.suite}
                 </p>
-                <p className="zip"> Zip: { user.address.zipcode } </p>
+                <p className="zip"> Zip: {user.address.zipcode} </p>
             </div>
         </div>
-    )
-}
+    );
+};

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { AddressCard } from "../../Components/AddressCard/AddressCard";
+import { ProfileImageCard } from "../../Components/ProfileImageCard/ProfileImageCard";
 import {
     fetchAsyncUsers,
     setCurrentUser,
@@ -18,10 +19,10 @@ const Profile = ({
     const { id } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
-        users.length === 0 
-        ? fetchUser(Number(id))
-        : setCurrentUser(users.find(user => user.id === Number(id)));
-    }, [id , fetchUser , users , setCurrentUser]);
+        users.length === 0
+            ? fetchUser(Number(id))
+            : setCurrentUser(users.find(user => user.id === Number(id)));
+    }, [id, fetchUser, users, setCurrentUser]);
 
     return (
         <div className="profile-page-wrapper">
@@ -29,8 +30,15 @@ const Profile = ({
                 <h1>Profile {id} </h1>
                 <p> {user ? user.username : "nope"} </p>
                 <button onClick={() => navigate("/")}> Go Back </button>
+                <div class="image">
+                    {user && (
+                        <ProfileImageCard
+                            image={`https://avatars2.githubusercontent.com/u/${user.id}`}
+                        />
+                    )}
+                </div>
                 <div className="address">
-                    {user && <AddressCard user={ user } />}
+                    {user && <AddressCard user={user} />}
                 </div>
             </div>
         </div>
