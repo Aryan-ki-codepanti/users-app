@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import { AddressCard } from "../../Components/AddressCard/AddressCard";
 import { CompanyCard } from "../../Components/CompanyCard/CompanyCard";
 import { ProfileImageCard } from "../../Components/ProfileImageCard/ProfileImageCard";
+import { UserInfoCard } from "../../Components/UserInfoCard/UserInfoCard";
 import {
     fetchAsyncUsers,
     setCurrentUser,
@@ -37,6 +38,9 @@ const Profile = ({
                             image={`https://avatars2.githubusercontent.com/u/${user.id}`}
                         />
                     )}
+                </div>
+                <div className="user-info">
+                    {user && <UserInfoCard user={user} />}
                 </div>
                 <div className="address">
                     {user && <AddressCard user={user} />}
