@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { AddressCard } from "../../Components/AddressCard/AddressCard";
+import { CompanyCard } from "../../Components/CompanyCard/CompanyCard";
 import { ProfileImageCard } from "../../Components/ProfileImageCard/ProfileImageCard";
 import {
     fetchAsyncUsers,
@@ -39,6 +40,9 @@ const Profile = ({
                 </div>
                 <div className="address">
                     {user && <AddressCard user={user} />}
+                </div>
+                <div className="company">
+                    {user && <CompanyCard company={user.company} />}
                 </div>
             </div>
         </div>
