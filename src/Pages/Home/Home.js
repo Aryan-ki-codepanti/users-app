@@ -6,6 +6,9 @@ import { fetchAsyncUsers } from "../../redux";
 import "./Home.css";
 
 const Home = ({ status, fetchUsers }) => {
+
+    document.title = "Home | Users App"
+
     useEffect(() => {
         status.users.length === 0 && fetchUsers();
     }, [fetchUsers, status.users.length]);

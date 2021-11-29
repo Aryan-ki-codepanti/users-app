@@ -19,6 +19,13 @@ const Profile = ({
     fetchUser
 }) => {
     const { id } = useParams();
+
+    useEffect(() => {
+        user 
+        ? document.title = `@${user.username} | Users App`
+        : document.title = `@no-user | Users App`; 
+    }, [ user ]);
+
     useEffect(() => {
         users.length === 0
             ? fetchUser(Number(id))
