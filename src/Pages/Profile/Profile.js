@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import { AddressCard } from "../../Components/AddressCard/AddressCard";
 import { CompanyCard } from "../../Components/CompanyCard/CompanyCard";
 import { ProfileImageCard } from "../../Components/ProfileImageCard/ProfileImageCard";
@@ -19,7 +19,6 @@ const Profile = ({
     fetchUser
 }) => {
     const { id } = useParams();
-    const navigate = useNavigate();
     useEffect(() => {
         users.length === 0
             ? fetchUser(Number(id))
@@ -29,9 +28,6 @@ const Profile = ({
     return (
         <div className="profile-page-wrapper">
             <div class="container">
-                <h1>Profile {id} </h1>
-                <p> {user ? user.username : "nope"} </p>
-                <button onClick={() => navigate("/")}> Go Back </button>
                 <div class="image">
                     {user && (
                         <ProfileImageCard

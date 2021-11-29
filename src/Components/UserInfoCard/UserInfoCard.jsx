@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import "./UserInfoCard.css";
 
 export const UserInfoCard = ({ user }) => {
+    const navigate = useNavigate();
     return (
         <div className="user-info-wrapper">
             <div className="user-info-header">
@@ -19,8 +21,13 @@ export const UserInfoCard = ({ user }) => {
             </div>
             <p className="username"> @{user.username} </p>
             <div className="email-box">
-                <h2>Email</h2>
-                <p>{user.email}</p>
+                <div>
+                    <h2>Email</h2>
+                    <p>{user.email}</p>
+                </div>
+                <button className="send-back" onClick={() => navigate("/")}>
+                    Go Back
+                </button>
             </div>
         </div>
     );

@@ -1,8 +1,16 @@
 
+/* Fonts */
+.user-info-wrapper .name,
+.user-info-wrapper .username,
+.user-info-wrapper .coordinates,
+.email-box > *{
+    font-family: 'Nunito';
+}
+
 /* Header */
 .user-info-header{
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     gap: 1.5em;
 }
 .user-info-header div{
@@ -12,4 +20,57 @@
 
 .location-icon{
     width: 30px;
+}
+
+.user-info-wrapper .name{
+    font-weight: 900;
+    font-size: 3rem;
+    margin-bottom: -8px;
+    color: var(--Light-grey);
+}
+
+.email-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 1.6em;
+    max-width: 600px;
+}
+
+.send-back{
+    background-color: var(--Blue-accent);
+    padding: 0.6em;
+    font-size: 1.3rem;
+    border: none;
+    color: #f2f2f2;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .5s;
+}
+
+.send-back:hover{
+    background: #005faa;
+}
+
+.email-box h2{
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--Light-grey);
+}
+
+.email-box p{
+    color: var(--Blue-accent);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.coordinates{
+    font-weight: 600;
+}
+
+.user-info-wrapper .username{
+    color: var(--Blue-accent);
+    font-weight: 800;
+    font-size: 1.2rem;
 }

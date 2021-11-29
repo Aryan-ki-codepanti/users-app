@@ -2,7 +2,6 @@
 
 
 .profile-page-wrapper{
-    --Blue-accent: #2096F3;
     min-height: 100vh;
     background-color: var(--Blue-accent);
     display: flex;
@@ -12,5 +11,13 @@
 .profile-page-wrapper .container{
     background: #fff;
     border-radius: 10px;
-    padding: 2em;
+    padding: 3em;
+}
+
+
+/* Grid system */
+.profile-page-wrapper .container{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2em;
 }
