@@ -18,4 +18,20 @@
     gap: 2em;
     height: 72vh;
     overflow-y: auto;
+
+    padding-right: 0.5em;
+
+    /* Scroll bar Mozilla */
+    scrollbar-width: thin;
+}
+
+/* Chrome + other browsers */
+.profile-container::-webkit-scrollbar{
+    width: 0.25vw;
+}
+.profile-container::-webkit-scrollbar-thumb{
+    background: rgb(105, 104, 104);
+}
+.profile-container::-webkit-scrollbar-track{
+    background: rgb(235, 232, 232);
 }
