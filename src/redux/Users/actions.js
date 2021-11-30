@@ -1,4 +1,10 @@
-import { FETCH_USERS, SET_USERS, SET_ERROR, SET_CURRENT_USER } from "./types";
+import {
+    FETCH_USERS,
+    ADD_NEW_USER,
+    SET_USERS,
+    SET_ERROR,
+    SET_CURRENT_USER
+} from "./types";
 
 export const fetchUsers = () => ({
     type: FETCH_USERS
@@ -18,6 +24,13 @@ export const setCurrentUser = user => ({
     type: SET_CURRENT_USER,
     payload: user
 });
+
+export const addNewUser = user => ({
+    type: ADD_NEW_USER,
+    payload: user
+});
+
+// Async Actions
 
 export const fetchAsyncUsers = () => async dispatch => {
     dispatch(fetchUsers());

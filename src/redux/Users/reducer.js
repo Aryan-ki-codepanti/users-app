@@ -1,4 +1,10 @@
-import { FETCH_USERS, SET_ERROR, SET_USERS, SET_CURRENT_USER } from "./types";
+import {
+    FETCH_USERS,
+    SET_ERROR,
+    SET_USERS,
+    SET_CURRENT_USER,
+    ADD_NEW_USER
+} from "./types";
 
 const initialState = {
     loading: false,
@@ -37,6 +43,12 @@ export const UsersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 user: action.payload
+            };
+
+        case ADD_NEW_USER:
+            return {
+                ...state,
+                users: [...state.users, action.payload]
             };
 
         default:
